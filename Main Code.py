@@ -54,11 +54,11 @@ def move_to_bin(index):
 # Move servo to original position & shut power off to unnecessary components
 def reset():
     return False
-sort("MASS", MASS_TOL, 100)
-sort("MASS", MASS_TOL, 1000)
-sort("MASS", MASS_TOL, 120)
-sort("MASS", MASS_TOL, 900)
-print(recorded_masses)
+#sort("MASS", MASS_TOL, 100)
+#sort("MASS", MASS_TOL, 1000)
+#sort("MASS", MASS_TOL, 120)
+#sort("MASS", MASS_TOL, 900)
+#print(recorded_masses)
 reset()
 #while True:
     
