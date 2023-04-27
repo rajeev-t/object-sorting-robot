@@ -6,6 +6,9 @@ import time
 ir0 = Pin(3, Pin.IN)
 ir1 = Pin(4, Pin.IN)
 ir2 = Pin(5, Pin.IN)
+butt_mass = Pin(6, Pin.IN)
+butt_color = Pin(7, Pin.IN)
+
 
 # Variables
 bin_dex = -1  # initialize marker for bin number
@@ -32,6 +35,7 @@ crank.freq(50)
 valve = Pin(0, Pin.OUT)
 
 ir_list = [ir0, ir1, ir2]
+
 base_pos = [BASE_POS0, BASE_POS1, BASE_POS2, BASE_POS3]
 foba_pos = [PICKUP_POS, ROTATE_POS]
 
@@ -39,12 +43,30 @@ limit = 1  # initializing limit sensor status; functions like push button
 mass = 0  # ^
 color = 0 # ^
 
+
 # real-time sorting; bins are not hard-coded
 masses = []
 colors = []
 
 user_input = 0 # still needs to be programmed - IR remote
-
+time_ref = time.ticks_ms()
+# User Input Functions
+# Determine mode based on button inputs; parameters are BUTTONS, not button values
+def user_choose(mass_in, color_in)
+    output_mode = ""
+    if mass_in.value() == color_in.value():
+        # Print error on LCD, don't do anything
+    
+    elif mass_in.value() == 0 and color_in.value() != 0:
+        output_mode = "MASS"
+    # Color Sort
+    elif mass_in.value() != 0 and color_in.value() == 0:
+        output_mode = "COLOR"
+    time_ref = time.ticks_ms()
+    return output_mode
+    
+# LCD Functions
+        
 # Sort function outputs correct bin_dex
 def sort(mode, tol, mass_reading, color_reading):
     bin_dex = -1
@@ -92,5 +114,6 @@ while True:
 
         sort(user_input, MASS_TOL, mass, color)
         rotate(-1)
+    
 
         # incomplete
