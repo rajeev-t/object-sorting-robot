@@ -1,0 +1,3 @@
+- when solenoid is powered, air doesnt pass through
+- solenoid needs to be powered by rail but voltage needs to be regulated via relay
+- pump and solenoid might need to be mounted on arm due to pressure drop
