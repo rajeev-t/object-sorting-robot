@@ -6,13 +6,13 @@ import time
 ir0 = Pin(3, Pin.IN)
 ir1 = Pin(4, Pin.IN)
 ir2 = Pin(5, Pin.IN)
+
+# User Inputs
 butt_mass = Pin(6, Pin.IN)
 butt_color = Pin(7, Pin.IN)
 
-
 # Variables
 bin_dex = -1  # initialize marker for bin number
-
 MASS_TOL = const(100)  # Tolerance for object mass; will change
 
 # Base servo's angles - correlates to center of unsorted ramp and bins
@@ -52,10 +52,11 @@ user_input = 0 # still needs to be programmed - IR remote
 time_ref = time.ticks_ms()
 # User Input Functions
 # Determine mode based on button inputs; parameters are BUTTONS, not button values
-def user_choose(mass_in, color_in)
+def user_choose(mass_in, color_in):
     output_mode = ""
     if mass_in.value() == color_in.value():
         # Print error on LCD, don't do anything
+        pass
     
     elif mass_in.value() == 0 and color_in.value() != 0:
         output_mode = "MASS"
