@@ -12,15 +12,6 @@ I2C_NUM_COLS = 20
 i2c = I2C(0, sda=machine.Pin(0), scl=machine.Pin(1), freq=400000)
 lcd = I2cLcd(i2c, I2C_ADDR, I2C_NUM_ROWS, I2C_NUM_COLS)    
 
-#lcd.clear()
-#lcd.move_to(5,0)
-#lcd.putstr("Light")
-#lcd.move_to(5,1)
-#lcd.putstr("Cube")
-#utime.sleep(2)
-
-
-#Standby Mode
 def standby():
     print("Standby Mode")
     lcd.clear()
@@ -49,6 +40,7 @@ def heavy():
     lcd.clear()
     
 def red():
+    lcd.clear()
     print("Red")
     lcd.move_to(4,0)
     lcd.putstr("Red")
@@ -56,6 +48,7 @@ def red():
     lcd.putstr("Cube")
     
 def green():
+    lcd.clear()
     print("Green")
     lcd.move_to(4,0)
     lcd.putstr("Green")
@@ -63,11 +56,25 @@ def green():
     lcd.putstr("Cube")
     
 def blue():
+    lcd.clear()
     print("Blue")
     lcd.move_to(4,0)
     lcd.putstr("Blue")
     lcd.move_to(4,1)
     lcd.putstr("Cube")
+
+def error():
+    lcd.clear()
+    print("Error")
+    lcd.move_to(4,0)
+    lcd.putstr("Error")
+
+def input():
+    lcd.clear()
+    lcd.move_to(4,0)
+    lcd.putstr("MASS:L")  # indicates left button
+    lcd.move_to(4,1)
+    lcd.putstr("COLOR:R") # indicates right button
 
 def picking():
     print("Picking up Cube")
@@ -78,24 +85,6 @@ def picking():
     utime.sleep(2)
     lcd.clear()
 
-    
-#if #nothing:
-    #lcd.clear()
-    #lcd.move_to(4,0)
-    #lcd.putstr("Standby")
-
-#if #heavy#:
-    #lcd.clear()
-    #lcd.move_to(5,0)
-    #lcd.putstr("Heavy")
-    #lcd.move_to(5,1)
-    #lcd.putstr("Cube")
-
-#if #Light#:
-    #lcd.move_to(5,0)
-    #lcd.putstr("Light")
-    #lcd.move_to(5,1)
-    #lcd.putstr("Cube")
 def testtime():
     standby()
     light()
