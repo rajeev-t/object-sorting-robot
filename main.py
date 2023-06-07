@@ -1,7 +1,9 @@
+# Written by: Rajeev Thimmareddy and Joseph Tai
+
 # Dependencies
 from machine import Pin, ADC, PWM
 import time
-import my_lcd
+from lcd import my_lcd
 
 # User Inputs
 butt_mass = Pin(6, Pin.IN)
