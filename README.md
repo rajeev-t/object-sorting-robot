@@ -11,7 +11,7 @@ We are a group of 6 undergraduate students who undertook this project as part of
 
 <br>
 
-The ***cad*** folder stores our models, sketches, and drawings. Most of the files cannot be previewed given the file type; please download the folder in its entirety to view our model. When opening *main.SLDASM*, a dialog boss prompting to locate a file will appear; Choose to suppress it.
+The ***cad*** folder stores our models, sketches, and drawings. Most of the files cannot be previewed given the file type; please download the folder in its entirety to view our model. When opening *main.SLDASM*, a dialog box prompting to locate a file will appear; Choose to suppress it.
 
 <br>
 
